@@ -3,3 +3,6 @@
 - pip install -r requirements.txt
 
 ###To Do
+
+##Team Memember Responsibilities
+Scaffold Pages and Front-End - Leah Kalush and Adam Thomas
