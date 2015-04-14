@@ -10,9 +10,9 @@ handlers:
 - url: /css
   static_dir: css
 - url: /js
-  static: js
+  static_dir: js
 - url: /font
-  static: font
+  static_dir: font
 # [END handlers]
 
 # [START libraries]
