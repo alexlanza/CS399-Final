@@ -41,7 +41,7 @@ class Username(ndb.Model):
 
     name = ndb.StringProperty(indexed=False)
     email = ndb.StringProperty(indexed=False)
-    password = nbd.StringProperty(indexed=False)
+    password = ndb.StringProperty(indexed=False)
 
 
 class Reviews(ndb.Model):
@@ -60,9 +60,10 @@ class LoginPage(webapp2.RequestHandler):
     def get(self):
         user_login = self.request.get('user_login',
                 DEFAULT_USER_LOGIN_SYSTEM)
+        reviews = reviews_query.fetch(10)
         greetings_query = \
             Reviews.query(ancestor=user_login_key(user_login)).order(-reviews.date)
-        reviews = reviews_query.fetch(10)
+        
 
         user = users.get_current_user()
         if user:
@@ -112,5 +113,5 @@ class User_Login_Name(webapp2.RequestHandler):
         self.redirect('/?' + urllib.urlencode(query_params))
 
 
-app = webapp2.WSGIApplication([('/', MainPage), ('/sign', User_Login_Name)],
-                              debug=True)
+#app = webapp2.WSGIApplication([('/', MainPage), ('/sign', User_Login_Name)],
+#                              debug=True)
