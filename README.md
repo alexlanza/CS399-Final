@@ -1,8 +1,26 @@
-##Class Final Project for NAU CS399
-### How to install Requirements
-- pip install -r requirements.txt
+TASKS:
 
-###To Do
+SPLASH:
+Styling
 
-##Team Memember Responsibilities
-Scaffold Pages and Front-End - Leah Kalush and Adam Thomas
+HOME/LOGIN:
+Styling
+Authentication
+Welcome User (recognize user etc.)
+Logout button
+
+EVALUATIONS:
+Styling
+Pull from DB your group
+Record scores in DB
+
+MAIN MENU/CLASS LIST:
+Styling
+Display all classes the user is in
+Redirect to evaluation page upon clicking on class
+
+INSTRUCTOR PAGE:
+Styling
+Change user passwords
+List all users/students in a class
+View Scores/Evals
