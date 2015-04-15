@@ -11,10 +11,8 @@ from google.appengine.ext import ndb
 import jinja2
 import webapp2
 
-JINJA_ENVIRONMENT = \
-    jinja2.Environment(loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
-                       extensions=['jinja2.ext.autoescape'],
-                       autoescape=True)
+JINJA_ENVIRONMENT = jinja2.Environment(autoescape=True,
+    loader=jinja2.FileSystemLoader(os.path.join(os.path.dirname(__file__), 'templates')))
 
 # [END imports]
 
@@ -82,7 +80,7 @@ class LoginPage(webapp2.RequestHandler):
             'url_linktext': url_linktext,
             }
 
-        template = JINJA_ENVIRONMENT.get_template('instructor_login.html')
+        template = JINJA_ENVIRONMENT.get_template('student_login.html')
         self.response.write(template.render(template_values))
 
 
