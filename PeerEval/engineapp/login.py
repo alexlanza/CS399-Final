@@ -60,10 +60,11 @@ class LoginPage(webapp2.RequestHandler):
     def get(self):
         user_login = self.request.get('user_login',
                 DEFAULT_USER_LOGIN_SYSTEM)
-        reviews = reviews_query.fetch(10)
-        greetings_query = \
-            Reviews.query(ancestor=user_login_key(user_login)).order(-reviews.date)
         
+        greetings_query = \
+            Reviews.query(ancestor=user_login_key(user_login)).order(-Reviews.date)
+        
+        reviews = greetings_query.fetch(10)
 
         user = users.get_current_user()
         if user:
@@ -81,7 +82,7 @@ class LoginPage(webapp2.RequestHandler):
             'url_linktext': url_linktext,
             }
 
-        template = JINJA_ENVIRONMENT.get_template('login.html')
+        template = JINJA_ENVIRONMENT.get_template('instructor_login.html')
         self.response.write(template.render(template_values))
 
 
