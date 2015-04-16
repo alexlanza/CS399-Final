@@ -16,6 +16,7 @@
 #
 import webapp2
 import login
+import index
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
@@ -23,7 +24,7 @@ class MainHandler(webapp2.RequestHandler):
         
 app = webapp2.WSGIApplication([
     ('/login', login.LoginPage),
-    ('/', MainHandler)
+    ('/', index.LoginPage)
     
 ], debug=True)
 
