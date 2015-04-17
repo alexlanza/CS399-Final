@@ -24,6 +24,7 @@ class MainHandler(webapp2.RequestHandler):
         
 app = webapp2.WSGIApplication([
     ('/login', login.LoginPage),
+    ('/InstructorLogin', login.InstructorLogin),
     ('/', index.LoginPage)
     
 ], debug=True)
