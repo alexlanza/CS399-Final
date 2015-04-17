@@ -86,6 +86,36 @@ class LoginPage(webapp2.RequestHandler):
 
 # [END login_page]
 
+class about(webapp2.RequestHandler):
+
+    def get(self):
+        user_login = self.request.get('user_login',
+                DEFAULT_USER_LOGIN_SYSTEM)
+
+        greetings_query = \
+            Reviews.query(ancestor=user_login_key(user_login)).order(-Reviews.date)
+
+        reviews = greetings_query.fetch(10)
+
+        user = users.get_current_user()
+        if user:
+            url = users.create_logout_url(self.request.uri)
+            url_linktext = 'Logout'
+        else:
+            url = users.create_login_url(self.request.uri)
+            url_linktext = 'Login'
+
+        template_values = {
+            'user': user,
+            'reviews': reviews,
+            'user_login': urllib.quote_plus(user_login),
+            'url': url,
+            'url_linktext': url_linktext,
+            }
+
+        template = JINJA_ENVIRONMENT.get_template('about.html')
+        self.response.write(template.render(template_values))
+
 class User_Login_Name(webapp2.RequestHandler):
 
     def post(self):
