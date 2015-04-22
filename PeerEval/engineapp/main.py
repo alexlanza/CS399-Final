@@ -16,8 +16,9 @@
 #
 import webapp2
 from handlers import Index
+from handlers import InstructorHome
 
-app = webapp2.WSGIApplication([('/', Index)], debug=True)        
+app = webapp2.WSGIApplication([('/', Index),('/InstructorHome',InstructorHome)], debug=True)
 #app = webapp2.WSGIApplication([
 #    ('/login', login.LoginPage),
 #    ('/InstructorLogin', login.InstructorLogin),
