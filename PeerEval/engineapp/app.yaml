@@ -13,8 +13,12 @@ handlers:
   static_dir: static/font
 - url: /images
   static_dir: static/images
-- url: .*
+- url: /
   script: main.app
+- url: /InstructorHome
+  script: main.app
+  login: required
+
 
 libraries:
 - name: webapp2
