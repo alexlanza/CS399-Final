@@ -18,16 +18,8 @@
 
     <!-- Custom styles for this template -->
     <link href="justified-nav.css" rel="stylesheet">
-
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+	
     <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
 
 
 <style>
@@ -68,12 +60,37 @@ h3 {
 	font-size: 14px;
 }
 
+.navbar-default {
+	border: 1px solid #9BD0F5;
+}
+
 </style>
 
   </head>
 
   <body>
       <div class="container">
+	          <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/" style="color: #102487;">TechGrader</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="login">Student Login</a></li>
+                        <li><a href="InstructorLogin">Instructor Login</a></li>
+                        <li class="active"><a href="#">About Us</a></li>
+                        <li><a href="https://www.github.com/alexlanza/CS399-Final.git">GitHub</a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div><!--/.container-fluid -->
+        </nav>
       <!-- Jumbotron -->
       <div class="jumbotron" style="background-color: #FFF;">
 	  <h4>Will be updated to use database later</h4>
