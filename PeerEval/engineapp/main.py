@@ -15,20 +15,16 @@
 # limitations under the License.
 #
 import webapp2
-import login
-import index
+from handlers import Index
 
-class MainHandler(webapp2.RequestHandler):
-    def get(self):
-        self.response.write('Hello world!')
-        
-app = webapp2.WSGIApplication([
-    ('/login', login.LoginPage),
-    ('/InstructorLogin', login.InstructorLogin),
-    ('/', index.LoginPage),
-    ('/about',index.about)
-    
-], debug=True)
+app = webapp2.WSGIApplication([('/', Index)], debug=True)        
+#app = webapp2.WSGIApplication([
+#    ('/login', login.LoginPage),
+#    ('/InstructorLogin', login.InstructorLogin),
+#    ('/', index.LoginPage),
+#    ('/about',index.about)
+#    
+#], debug=True)
 
 
 
