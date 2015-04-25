@@ -1,21 +1,20 @@
 from google.appengine.api import users
 from google.appengine.ext import ndb
 import urllib
-import os
-import jinja2
 import webapp2
 
-# [START login_page]
+from handlers import BaseHandler
+from models import reviews, username
 
-class LoginPage(webapp2.RequestHandler):
+class InstructorLogin(BaseHandler):
 
     def get(self):
         user_login = self.request.get('user_login',
                 DEFAULT_USER_LOGIN_SYSTEM)
-        
+
         greetings_query = \
             Reviews.query(ancestor=user_login_key(user_login)).order(-Reviews.date)
-        
+
         reviews = greetings_query.fetch(10)
 
         user = users.get_current_user()
@@ -34,13 +33,10 @@ class LoginPage(webapp2.RequestHandler):
             'url_linktext': url_linktext,
             }
 
-        template = JINJA_ENVIRONMENT.get_template('student_login.html')
+        template = JINJA_ENVIRONMENT.get_template('instructor_login.html')
         self.response.write(template.render(template_values))
-
-
-# [END login_page]
-
-class User_Login_Name(webapp2.RequestHandler):
+		
+class User_Login_Name(BaseHandler):
 
     def post(self):
 
