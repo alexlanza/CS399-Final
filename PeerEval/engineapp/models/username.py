@@ -1,3 +1,5 @@
+from google.appengine.ext import ndb
+
 class Username(ndb.Model):
 
     """Sub model for representing a user."""

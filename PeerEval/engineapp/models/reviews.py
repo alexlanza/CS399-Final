@@ -1,3 +1,7 @@
+from google.appengine.ext import ndb
+
+from username import Username
+
 class Reviews(ndb.Model):
 
     """A main model for representing an individual User_Login_Name entry."""
