@@ -37,7 +37,7 @@ class StudentLogin(BaseHandler):
         self.response.write(template.render(template_values))
 
 
-class User_Login_Name(wBaseHandler):
+class User_Login_Name(BaseHandler):
 
     def post(self):
 
