@@ -4,5 +4,5 @@ class Projects(ndb.Model):
 
     """A main model for representing an individual User_Login_Name entry."""
 
-    name = ndb.StringProperty(Username)
+    name = ndb.StringProperty()
     due_date = ndb.DateTimeProperty(auto_now_add=True)

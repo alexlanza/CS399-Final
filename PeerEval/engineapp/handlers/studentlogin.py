@@ -9,7 +9,7 @@ from models import reviews, username
 class StudentLogin(BaseHandler):
 
     def get(self):
-        user_login = self.request.get('user_login',
+        user_login = self.request.get('user_login', 
                 DEFAULT_USER_LOGIN_SYSTEM)
         
         greetings_query = \
@@ -61,7 +61,3 @@ class User_Login_Name(BaseHandler):
 
         query_params = {'user_login': user_login}
         self.redirect('/?' + urllib.urlencode(query_params))
-
-
-#app = webapp2.WSGIApplication([('/', MainPage), ('/sign', User_Login_Name)],
-#                              debug=True)
