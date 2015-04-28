@@ -44,7 +44,7 @@ class InstructorLogin(BaseHandler):
         template = jinja_environment.get_template('instructor_login.html')
         self.response.write(template.render(template_values))
 		
-class User_Login_Name(BaseHandler):
+#class User_Login_Name(BaseHandler):
 
     def post(self):
 
@@ -56,19 +56,15 @@ class User_Login_Name(BaseHandler):
 
         user_login = self.request.get('user_login',
                 'DEFAULT_USER_SYSTEM')
-        review = Review(parent=user_login_key(user_login))
+        #review = Review(parent=user_login_key(user_login))
 
-        if users.get_current_user():
-            review.author = \
-                Username(name=users.get_current_user().user_id(),
-                       email=users.get_current_user().email())
+        #if users.get_current_user():
+        #    review.author = \
+        #        username(name=users.get_current_user().user_id(),
+        #               email=users.get_current_user().email())
 
-        review.content = self.request.get('content')
-        review.put()
+        #review.content = self.request.get('content')
+        #review.put()
 
         query_params = {'user_login': user_login}
         self.redirect('/?' + urllib.urlencode(query_params))
-
-
-#app = webapp2.WSGIApplication([('/', MainPage), ('/sign', User_Login_Name)],
-#                              debug=True)
