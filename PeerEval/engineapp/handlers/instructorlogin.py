@@ -2,20 +2,28 @@ from google.appengine.api import users
 from google.appengine.ext import ndb
 import urllib
 import webapp2
+import jinja2
+import os
 
 from handlers import BaseHandler
 from models import reviews, username
+
+jinja_environment = jinja2.Environment(
+        extensions=['jinja2.ext.autoescape'],
+        loader=jinja2.FileSystemLoader(
+            os.path.dirname(__file__) + "/../templates/"),
+        autoescape=True)
 
 class InstructorLogin(BaseHandler):
 
     def get(self):
         user_login = self.request.get('user_login',
-                DEFAULT_USER_LOGIN_SYSTEM)
+                'DEFAULT_USER_LOGIN_SYSTEM')
 
-        greetings_query = \
-            Reviews.query(ancestor=user_login_key(user_login)).order(-Reviews.date)
+        #greetings_query = \
+        #    Reviews.query(ancestor=user_login_key(user_login)).order(-Reviews.date)
 
-        reviews = greetings_query.fetch(10)
+        #reviews = greetings_query.fetch(10)
 
         user = users.get_current_user()
         if user:
@@ -33,7 +41,7 @@ class InstructorLogin(BaseHandler):
             'url_linktext': url_linktext,
             }
 
-        template = JINJA_ENVIRONMENT.get_template('instructor_login.html')
+        template = jinja_environment.get_template('instructor_login.html')
         self.response.write(template.render(template_values))
 		
 class User_Login_Name(BaseHandler):
@@ -47,7 +55,7 @@ class User_Login_Name(BaseHandler):
         # ~1/second.
 
         user_login = self.request.get('user_login',
-                DEFAULT_USER_SYSTEM)
+                'DEFAULT_USER_SYSTEM')
         review = Review(parent=user_login_key(user_login))
 
         if users.get_current_user():
