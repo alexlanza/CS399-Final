@@ -15,11 +15,13 @@
 # limitations under the License.
 #
 import webapp2
-from handlers import Index, InstructorLogin, StudentLogin
+from handlers import Index, InstructorLogin, StudentLogin, About
 
 app = webapp2.WSGIApplication([
     ('/InstructorHome', InstructorLogin),
+    ('/InstructorLogin', InstructorLogin),
     ('/login', StudentLogin),
+    ('/about', About),
     ('/', Index)
     ], debug=True)
 

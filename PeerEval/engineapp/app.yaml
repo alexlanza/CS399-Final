@@ -16,7 +16,13 @@ handlers:
 - url: /InstructorHome
   script: main.app
   login: required
+- url: /InstructorLogin
+  script: main.app
+  login: required
 - url: /login
+  script: main.app
+  login: required
+- url: /about
   script: main.app
   login: required
 - url: /
