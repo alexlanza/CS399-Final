@@ -6,22 +6,13 @@ import jinja2
 import os
 
 from handlers import BaseHandler
-from models import reviews, username
-
-jinja_environment = jinja2.Environment(
-        extensions=['jinja2.ext.autoescape'],
-        loader=jinja2.FileSystemLoader(
-            os.path.dirname(__file__) + "/../templates/"),
-        autoescape=True)
+#from models import reviews, username
 
 class StudentLogin(BaseHandler):
 
     def get(self):
         user_login = self.request.get('user_login', 
                 'DEFAULT_USER_LOGIN_SYSTEM')
-        
-        
-        
         #greetings_query = \
         #    Reviews.query(ancestor=user_login_key(user_login)).order(-Reviews.date)
         
@@ -37,15 +28,12 @@ class StudentLogin(BaseHandler):
 
         template_values = {
             'user': user,
-            'reviews': reviews,
+            #'reviews': reviews,
             'user_login': urllib.quote_plus(user_login),
             'url': url,
             'url_linktext': url_linktext,
             }
-
-        template = jinja_environment.get_template('student_login.html')
-        self.response.write(template.render(template_values))
-
+        self.render("student_login.html", {})
 
 #class User_Login_Name(BaseHandler):
 

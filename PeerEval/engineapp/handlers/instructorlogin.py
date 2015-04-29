@@ -6,13 +6,7 @@ import jinja2
 import os
 
 from handlers import BaseHandler
-from models import reviews, username
-
-jinja_environment = jinja2.Environment(
-        extensions=['jinja2.ext.autoescape'],
-        loader=jinja2.FileSystemLoader(
-            os.path.dirname(__file__) + "/../templates/"),
-        autoescape=True)
+#from models import reviews, username
 
 class InstructorLogin(BaseHandler):
 
@@ -35,14 +29,12 @@ class InstructorLogin(BaseHandler):
 
         template_values = {
             'user': user,
-            'reviews': reviews,
+            #'reviews': reviews,
             'user_login': urllib.quote_plus(user_login),
             'url': url,
             'url_linktext': url_linktext,
             }
-
-        template = jinja_environment.get_template('instructor_login.html')
-        self.response.write(template.render(template_values))
+        self.render("instructor_login.html", {})
 		
 #class User_Login_Name(BaseHandler):
 
