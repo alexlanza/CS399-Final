@@ -1,10 +1,11 @@
 #from reviews import Reviews
 #from user_profile import UserProfile
 #from projects import Projects
-from institution import Institution
-from institution_term import Term
+#from institution import Institution
+#from institution_term import Term
+#from course import Course
+
 from user_profile import UserProfile
-from course import Course
 from course_section import CoursesSection
 from course_section_project import Project
 from course_section_project_group import ProjectGroup
