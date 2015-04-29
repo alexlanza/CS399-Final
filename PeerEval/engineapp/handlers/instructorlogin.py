@@ -11,8 +11,8 @@ from handlers import BaseHandler
 class InstructorLogin(BaseHandler):
 
     def get(self):
-        user_login = self.request.get('user_login',
-                'DEFAULT_USER_LOGIN_SYSTEM')
+        #user_login = self.request.get('user_login',
+        #        'DEFAULT_USER_LOGIN_SYSTEM')
 
         #greetings_query = \
         #    Reviews.query(ancestor=user_login_key(user_login)).order(-Reviews.date)
@@ -21,9 +21,11 @@ class InstructorLogin(BaseHandler):
 
         user = users.get_current_user()
         if user:
+			#have a button with logout on main page
             url = users.create_logout_url(self.request.uri)
             url_linktext = 'Logout'
         else:
+			#pass into template, this should be the destination for the button
             url = users.create_login_url(self.request.uri)
             url_linktext = 'Login'
 
