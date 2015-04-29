@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,7 +9,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>TechGrader Home</title>
+    <title>{% block title %}{% endblock %}</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
@@ -54,7 +55,11 @@ p {
     color: #9BD0F5;
 }
 
-
+body {
+    background-image: url('images/bg.jpg');
+    background-repeat: no-repeat;
+    background-size: 1500px 700px;
+}
 
 .btn-default.active, .btn-default.focus, .btn-default:active, .btn-default:focus, .btn-default:hover, .open>.dropdown-toggle.btn-default {
     color: #C88D50;
@@ -67,14 +72,7 @@ p {
   <body>
 
 
-      <!-- Jumbotron -->
-        <h1 style="text-align: center;">TechGrader</h1>
-
-    <div align=center>
-        <a class="btn btn-lg btn-success" href="#" role="button">Create class/Section</a><br>
-		<a class="btn btn-lg btn-success" href="#" role="button">Add students to class</a>
-    </div>
-    <br><br>
+{% block content %}{% endblock %}
 
 
 

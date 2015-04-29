@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Create Project</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>{% block title %}{% endblock %}</title>
+
     <!-- Bootstrap core CSS -->
     <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
 <!-- Latest compiled and minified CSS -->
@@ -54,13 +59,16 @@ h3 {
 	font-size: 14px;
 }
 
+.page-header {
+	border-bottom: 1px solid #9BD0F5;
+}
+
 .navbar-default {
 	border: 1px solid #9BD0F5;
 }
 
 </style>
-
-  </head>
+</head>
 <body>
     <div class="container">
       <!-- Static navbar -->
@@ -78,46 +86,16 @@ h3 {
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a href="login">Student Login</a></li>
-                        <li class="active"><a href="#">Instructor Login</a></li>
-                        <li><a href="about">About Us</a></li>
+                        <li><a href="InstructorLogin">Instructor Login</a></li>
+                        <li class="active"><a href="#">About Us</a></li>
                         <li><a href="https://www.github.com/alexlanza/CS399-Final.git">GitHub</a></li>
                     </ul>
                 </div><!--/.nav-collapse -->
             </div><!--/.container-fluid -->
         </nav>
+        <!-- Introduction Row -->
         <div class="container-fluid">
-            <div class="row">
-                <div class="span12">
-                    <form class="form-horizontal" action='' method="POST">
-                        <fieldset>
-                            <div id="legend">
-                                <legend class="" style="border-bottom: 1px solid #9BD0F5;">Assign Users to Class</legend>
-                            </div>
-                            <div class="control-group">
-                                <!-- Username -->
-                                <label class="control-label"  for="username">Class Name</label>
-                                <div class="controls">
-                                    <input type="text" id="username" name="username" placeholder="" class="input-xlarge">
-                                </div>
-                            </div>
-                            <div class="control-group">
-                                <!-- Password-->
-                                <label class="control-label" for="password">Username</label>
-                                <div class="controls">
-                                    <input type="password" id="password" name="password" placeholder="" class="input-xlarge">
-                                </div>
-                            </div>
-                            <br></br>
-                            <div class="control-group">
-                                <!-- Button -->
-                                <div class="controls">
-                                    <button class="btn btn-success">Add</button>
-                                </div>
-                            </div>
-                        </fieldset>
-                    </form>
-                </div>
-            </div>
+		{% block content %}{% endblock %}
         </div>
     </div>
     <!-- jQuery -->
