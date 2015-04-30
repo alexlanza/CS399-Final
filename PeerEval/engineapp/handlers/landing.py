@@ -21,11 +21,10 @@ class Landing(BaseHandler):
 
         template_values = {
             'user': user,
-            # 'user_login': urllib.quote_plus(user_login),
             'url': url,
             'url_linktext': url_linktext,
             }
-        self.render("landing.html", {})
+        self.render("landing.html", (template_values))
     
     def post(self):
         user_login = self.request.get('user_login',
