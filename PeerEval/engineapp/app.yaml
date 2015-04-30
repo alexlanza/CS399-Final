@@ -13,13 +13,10 @@ handlers:
   static_dir: static/font
 - url: /images
   static_dir: static/images
-- url: /InstructorHome
+- url: /dashboard
   script: main.app
   login: required
-- url: /InstructorLogin
-  script: main.app
-  login: required
-- url: /login
+- url: /landing
   script: main.app
   login: required
 - url: /about

@@ -1,5 +1,4 @@
 from base_handler import BaseHandler
 from index import Index
-from instructorlogin import InstructorLogin
-from studentlogin import StudentLogin
+from landing import Landing
 from about import About
