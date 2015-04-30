@@ -6,7 +6,7 @@
 #from course import Course
 
 from user_profile import UserProfile
-from course_section import CoursesSection
+from course_section import CourseSection
 from course_section_project import Project
 from course_section_project_group import ProjectGroup
 from course_section_project_group_member import ProjectGroupMember
