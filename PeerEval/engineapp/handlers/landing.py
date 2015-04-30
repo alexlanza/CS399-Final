@@ -14,17 +14,16 @@ class Landing(BaseHandler):
             #have a button with logout on main page
             url = users.create_logout_url(self.request.uri)
             url_linktext = 'Logout'
-        else:
-            #pass into template, this should be the destination for the button
-            url = users.create_login_url(self.request.uri)
-            url_linktext = 'Login'
-
-        template_values = {
+            template_values = {
             'user': user,
             'url': url,
             'url_linktext': url_linktext,
             }
-        self.render("landing.html", (template_values))
+            self.render("landing.html", template_values)
+        else:
+            #pass into template, this should be the destination for the button
+            url = users.create_login_url(self.request.uri)
+            url_linktext = 'Login'
     
     def post(self):
         user_login = self.request.get('user_login',
