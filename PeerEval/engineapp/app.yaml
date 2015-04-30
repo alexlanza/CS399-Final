@@ -16,6 +16,9 @@ handlers:
 - url: /instructor
   script: main.app
   login: required
+- url: /course_section
+  script: main.app
+  login: required
 - url: /landing
   script: main.app
   login: required
