@@ -15,11 +15,12 @@
 # limitations under the License.
 #
 import webapp2
-from handlers import Index, Landing, About, InstructorDashboard , create_coursesection
+from handlers import Index, Landing, About, InstructorDashboard , create_coursesection, StudentDashboard
 
 app = webapp2.WSGIApplication([
 	('/landing', Landing),
     ('/about', About),
+    ('/student', StudentDashboard),
     ('/instructor', InstructorDashboard),
     ('/course_section',create_coursesection ),
     ('/', Index)
