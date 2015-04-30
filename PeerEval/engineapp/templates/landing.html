@@ -1,6 +1,30 @@
-{% extends "_layout.html" %}
-{% block title %}Landing TechGrader{% endblock %}
+{% extends "_splash.html" %}
+{% block title %}Select Role TechGrader{% endblock %}
 
 {% block content %}
-<h1>Landing!</h1>
+    <div align=center style='background-color: #b0c4de'>
+		<h1>Welcome! {{user.nickname()}}</h1>
+		<p></p>
+		<form class="form-horizontal" action='' method="POST">
+			<div class="control-group">
+				<div class="control-group">
+					<!-- Role -->
+					<label class="control-label" for="text">Please select your user role:</label>
+					<div class="controls">
+					<select name = "role">
+						<option value="instructor">Instructor</option>
+						<option value="student">Student</option>
+					</select>
+					</div>
+				</div>
+				<!-- Button -->
+				<div class="controls">
+					<button class="btn btn-success">Submit</button>
+				</div>
+			</div>
+		<form>
+    </div>
+
+
+
 {% endblock %}

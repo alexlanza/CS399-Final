@@ -4,4 +4,4 @@ from handlers import BaseHandler
 class About(BaseHandler):
     def get(self):
         #self.response.headers['Content-Type'] = 'text/plain'
-        self.render("about.html", {})
+        self.render("about.html", self.template_values)
