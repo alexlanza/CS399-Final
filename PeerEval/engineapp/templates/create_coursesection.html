@@ -1,0 +1,68 @@
+{% extends "_layout.html" %}
+
+{% block scripts %}
+<script>
+	$(function() {
+		$("#datepicker" ).datepicker();
+	});
+</script>
+
+{% endblock %}
+
+{% block title %}Create a Course Section{% endblock %}
+
+{% block content %}
+            <div class="row">
+                <div class="span12">
+                    <form class="form-horizontal" action='' method="POST">
+                        <fieldset>
+                            <div id="legend">
+                                <legend class="" style="border-bottom: 1px solid #9BD0F5;">Create a Course Section</legend>
+                            </div>
+                            <div class="control-group">
+                                <!-- Course Name -->
+                                <label class="control-label"  for="course_name">Course Name</label>
+                                <div class="controls">
+                                    <input type="text" id="course_name" name="course_name" placeholder="" class="input-xlarge">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <!-- Course Description-->
+                                <label class="control-label" for="password">Course Description</label>
+                                <div class="controls">
+                                    <input type="text" id="course_description" name="course_description" placeholder="" class="input-xlarge">
+                                </div>
+                            </div>
+							<div class="control-group">
+                                <!-- Term Name-->
+                                <label class="control-label" for="text">Term Name</label>
+                                <div class="controls">
+								<input type="text" id="term_name" name="term_name" placeholder="" class="input-xlarge">
+								</div>
+							</div>
+							<div class="control-group">
+                                <!-- Begin Date-->
+                                <label class="control-label" for="text">Begin Date</label>
+                                <div class="controls">
+								<input type="text" id="begin_date" name="begin_date" placeholder="" class="input-xlarge">
+								</div>
+							</div>
+							<div class="control-group">
+                                <!-- End Date-->
+                                <label class="control-label" for="text">End Date</label>
+                                <div class="controls">
+								<input type="text" id="end_date" name="end_date" placeholder="" class="input-xlarge">
+								</div>
+							</div>
+                            <br></br>
+                            <div class="control-group">
+                                <!-- Button -->
+                                <div class="controls">
+                                    <button class="btn btn-success">Create</button>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+{% endblock %}
