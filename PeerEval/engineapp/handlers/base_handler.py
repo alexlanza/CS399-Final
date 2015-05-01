@@ -16,6 +16,7 @@ class BaseHandler(webapp2.RequestHandler):
 		super(BaseHandler, self).__init__(request, response)
 		# your own code goes here...
 		self.user = users.get_current_user()
+		self.template_values = {}
 		if self.user:
 			qry = UserProfile.query()
 			qry = qry.filter(UserProfile.user==self.user)
