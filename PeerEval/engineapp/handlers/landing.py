@@ -4,9 +4,12 @@ import urllib
 import webapp2
 import jinja2
 import os
+import time
+
+
 from handlers import BaseHandler
 from models import UserProfile
- 
+
 class Landing(BaseHandler):
 
     def get(self):
@@ -30,11 +33,13 @@ class Landing(BaseHandler):
 				self.response.out.write('Student')
 				userprofile = UserProfile(user=self.user, role=selectedrole)
 				userprofile_key = userprofile.put()
+				time.sleep(1)
 				self.redirect("/dashboard")
 			elif selectedrole == 'instructor':
 				self.response.out.write('Instructor')
 				userprofile = UserProfile(user=self.user, role=selectedrole)
 				userprofile_key = userprofile.put()
+				time.sleep(1)
 				self.redirect("/dashboard")
 			else:
 				self.response.out.write('Error. Did not get expected role')

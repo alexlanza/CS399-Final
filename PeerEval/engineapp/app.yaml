@@ -16,13 +16,7 @@ handlers:
 - url: /dashboard
   script: main.app
   login: required
-- url: /instructor #remove
-  script: main.app
-  login: required
-- url: /student #remove
-  script: main.app
-  login: required
-- url: /course_section
+- url: /coursesection
   script: main.app
   login: required
 - url: /landing

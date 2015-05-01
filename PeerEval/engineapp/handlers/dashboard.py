@@ -8,7 +8,7 @@ from handlers import BaseHandler
 
 class Dashboard(BaseHandler):
 
-    def get(self):
+	def get(self):
 		if self.user:
 			if self.user_profile:
 				#User has profile
@@ -20,6 +20,9 @@ class Dashboard(BaseHandler):
 				#User does not have profile
 				self.redirect("/landing")
 		else:
-            #pass into template, this should be the destination for the button
+			#pass into template, this should be the destination for the button
 			self.url = users.create_login_url(self.request.uri)
 			self.url_linktext = 'Login'
+
+	def post(self):
+		self.response.write('Submitted')
