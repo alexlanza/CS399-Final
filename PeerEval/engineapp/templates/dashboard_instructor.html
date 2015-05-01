@@ -9,18 +9,10 @@
 		Create class/Section
 		</button>
 
-        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal1">
-		Add students to class
-		</button>
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal1">Add students to class</button>
 
-        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal2">
-		Create project
-		</button>
-
-
-
-
-		<a class="btn btn-lg btn-success" href="#" role="button">Create Project Groups</a>
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal2">Create project</button>
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#project-groups">Create Project Groups</button>
 		<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#members-to-groups">Add members to Project Groups</button>
   </div>
 
@@ -94,7 +86,20 @@
       <div class="modal-body">
         {% include 'form_addstudentstoprojectgroup.html' %}
       </div>
+    </div>
+  </div>
+</div>
 
+<div class="modal fade" id="project-groups" tabindex="-1" role="dialog" aria-labelledby="project-groups" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Create Project Groups</h4>
+      </div>
+      <div class="modal-body">
+        {% include 'form_creategroups.html' %}
+      </div>
     </div>
   </div>
 </div>
