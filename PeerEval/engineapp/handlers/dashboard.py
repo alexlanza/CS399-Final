@@ -21,10 +21,10 @@ class Dashboard(BaseHandler):
                     qry = CourseSection.query()
                     qry = qry.filter(CourseSection.instructor==self.user)
                     courses = qry.fetch()
-                    #tempValues = {}
 
+                    self.response.write(courses)
 
-                    tempValues.update(self.template_values)
+                    tempValues.update(courses)
 
                     self.render("dashboard_instructor.html", tempValues)
             else:
