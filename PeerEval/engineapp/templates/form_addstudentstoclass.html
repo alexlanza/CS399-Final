@@ -1,18 +1,22 @@
 <form class="form-horizontal" action='' method="POST">
+	<input type="hidden" id="form_name" name="form_name" value='addStudentsToCourse'>
 	<fieldset>
 		<div class="control-group">
 			<!-- Course Section -->
 			<label class="control-label"  for="password">Course Section</label>
 			<div class="controls">
-				<input type="text" id="course_section" name="course_section" placeholder="" class="input-xlarge">
+				<select name="course_name">
+				{% for course in data %}
+				<option value={{ course }}>{{ course.name }}</option>
+				{% endfor %}
+				</select>
 			</div>
 		</div>
 		<div class="control-group">
 			<!-- email address-->
 			<label class="control-label" for="password">Students Email</label>
 			<div class="controls">
-				<textarea rows="14" cols="30">
-                </textarea>
+				<textarea rows="14" cols="30" name="student_email"></textarea>
 			</div>
 		</div>
 

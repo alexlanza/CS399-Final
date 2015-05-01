@@ -37,14 +37,19 @@ class Dashboard(BaseHandler):
 
     def post(self):
 		formname = self.request.get('form_name')
-		coursename = self.request.get('course_name')
-		coursedescription = self.request.get('course_description')
-		termname = self.request.get('term_name')
-		begindate = self.request.get('beginDate')
-		enddate = self.request.get('endDate')
-		#self.response.write(formname + "," + coursename + "," + coursedescription + "," + termname + "," + datetime.datetime.strptime(begindate, "%m/%d/%Y").strftime("%m/%d/%Y") + "," + datetime.datetime.strptime(enddate, "%m/%d/%Y").strftime("%m/%d/%Y"))
 		if formname == 'addCourse':
+			#GET FORM DATA
+			coursename = self.request.get('course_name')
+			coursedescription = self.request.get('course_description')
+			termname = self.request.get('term_name')
+			begindate = self.request.get('beginDate')
+			enddate = self.request.get('endDate')
+			#STORE DATA TO BIG TABLE
 			coursesection = CourseSection(instructor=self.user,name=coursename, description=coursedescription, term_name=termname, begin_date=datetime.datetime.strptime(begindate,"%m/%d/%Y"), end_date=datetime.datetime.strptime(enddate,"%m/%d/%Y"))
 			coursesection_key = coursesection.put()
 			time.sleep(1)
 			self.redirect("/dashboard")
+		#if formname == 'addStudentsToCourse':
+			#self.response.write(self.request.get('course_name') + "-" + self.request.get('student_email'))
+			#Query course - Course_name.
+			
