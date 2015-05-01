@@ -19,6 +19,16 @@
 		<a class="btn btn-lg btn-success" href="#" role="button">Create Project Groups</a>
 		<a class="btn btn-lg btn-success" href="#" role="button">Add members to Project Groups</a>
 	</div>
+
+    <div align="center">
+            {% block body %}
+            <ul>
+                {% for user in users %}
+                    <li>{{ user.url }} </li>
+                {% endfor %}
+            </ul>
+            {% endblock %}
+    </div>
     <br><br>
 
 	<!-- Button trigger modal -->
