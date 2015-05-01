@@ -24,14 +24,9 @@ class Dashboard(BaseHandler):
                     qry = CourseSection.query()
                     qry = qry.filter(CourseSection.instructor==self.user)
                     courses = qry.fetch()
-                    self.response.write(courses[0])
-                    #tempValues.update(courses)
-                    #data = {}
 
-
-                    #tempValues.update(dict((a.split(":")) for a in courses))
-                    #self.response.write(tempValues)
-                    self.render("dashboard_instructor.html", {'data': courses} )
+                    tempValues.update({'data': courses})
+                    self.render("dashboard_instructor.html", tempValues )
             else:
                 #User does not have profile
                 self.redirect("/landing")
