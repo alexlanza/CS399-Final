@@ -1240,6 +1240,7 @@ body .ui-tooltip {
   </script>
 
 <form class="form-horizontal" action='' method="POST">
+	<input type="hidden" id="form_name" name="form_name" value='addCourse'>
 	<fieldset>
 		<div class="control-group">
 			<!-- Course Name -->
@@ -1266,14 +1267,14 @@ body .ui-tooltip {
 			<!-- Begin Date-->
 			<label class="control-label" for="text">Begin Date</label>
 			<div class="controls">
-			<input type="text" id="datepicker">
+			<input type="text" id="datepicker" name="beginDate">
 			</div>
 		</div>
 		<div class="control-group">
 			<!-- End Date-->
 			<label class="control-label" for="text">End Date</label>
 			<div class="controls">
-			<input type="text" id="datepicker2">
+			<input type="text" id="datepicker2" name="endDate">
 			</div>
 		</div>
 		<br></br>
