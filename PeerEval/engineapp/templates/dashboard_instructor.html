@@ -19,16 +19,16 @@
     <br>
 
     <div align="center">
-            <ul>
+            <table border=0>
                 {% for course in data %}
-                <li>{{ course.name }} </li>
-                <li>{{ course.description }} </li>
-                <li>{{ course.instructor.nickname() }} </li>
-                <li>{{ course.term_name }} </li>
-                <li>{{ course.begin_date }} </li>
-                <li>{{ course.end_date }} </li>
+                <tr><td>{{ course.name }} </tr></td>
+                <tr><td>{{ course.description }} </tr></td>
+                <tr><td>{{ course.instructor.nickname() }} </tr></td>
+                <tr><td>{{ course.term_name }} </tr></td>
+                <tr><td>{{ course.begin_date }} </tr></td>
+                <tr><td>{{ course.end_date }}</tr></td>
                 {% endfor %}
-            </ul>
+            </table>
     </div>
     <br><br>
 
